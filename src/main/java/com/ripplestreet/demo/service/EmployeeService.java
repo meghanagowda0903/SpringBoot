@@ -2,18 +2,25 @@ package com.ripplestreet.demo.service;
 
 import java.util.List;
 
-import com.ripplestreet.demo.entity.Employee;
+
+import com.ripplestreet.demo.model.EmployeeDTO;
+
+import com.ripplestreet.demo.request.EmployeeRequest;
 
 public interface EmployeeService {
 	
-	Employee saveEmployee(Employee employee);
+	EmployeeDTO saveEmployee(EmployeeRequest employee);
 	
-	List<Employee> getAllEmployee();
+	List<EmployeeDTO> getAllEmployee();
 	
-	Employee updateEmployee(Employee employee);
+	EmployeeDTO updateEmployee(EmployeeRequest employee);
 	
-	Employee getById(long id);
+	EmployeeDTO getById(long id);
 	
-	void deleteEmployee(long id);
+	long deleteEmployee(long id);
+
+	double findMaxSalary();
+	
+	List<EmployeeDTO> findByNameAndEmail(String name,String email);
 
 }

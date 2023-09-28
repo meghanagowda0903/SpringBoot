@@ -1,46 +1,19 @@
-package com.ripplestreet.demo.entity;
-import javax.persistence.*;
+package com.ripplestreet.demo.request;
 
-
-
-import lombok.Getter;
-import lombok.Setter;
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
-
-
-@AllArgsConstructor
-@NoArgsConstructor
-@Getter
-@Setter
-@Entity
-@Table(name="employee_info")
-public class Employee {
+public class EmployeeRequest {
 	
-	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private Long id;
-	
+	private long id;
 	private String name;
-	
 	private String gender;
-	
 	private String address;
-	
-	
-	@Column(unique=true,nullable=false)
 	private String email;
-	
 	private boolean isDeleted;
-	
-	private Long phoneNumber;
+	private long phoneNumber;
 	private double salary;
-	
-	
-	public Long getId() {
+	public long getId() {
 		return id;
 	}
-	public void setId(Long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 	public String getName() {
@@ -61,8 +34,6 @@ public class Employee {
 	public void setAddress(String address) {
 		this.address = address;
 	}
-	
-	
 	public String getEmail() {
 		return email;
 	}
@@ -72,13 +43,14 @@ public class Employee {
 	public boolean isDeleted() {
 		return isDeleted;
 	}
+	
 	public void setDeleted(boolean isDeleted) {
 		this.isDeleted = isDeleted;
 	}
-	public Long getPhoneNumber() {
+	public long getPhoneNumber() {
 		return phoneNumber;
 	}
-	public void setPhoneNumber(Long phoneNumber) {
+	public void setPhoneNumber(long phoneNumber) {
 		this.phoneNumber = phoneNumber;
 	}
 	public double getSalary() {
@@ -91,8 +63,14 @@ public class Employee {
 	public String toString() {
 		return "Employee [id=" + id + ", name=" + name + ", gender=" + gender + ", address=" + address + ", email="
 				+ email + ", isDeleted=" + isDeleted + ", phoneNumber=" + phoneNumber + ", salary=" + salary + "]";
-	}                                             
+	}     
 	
-		
+	
+	
+	
+	
 
 }
+
+
+
